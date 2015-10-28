@@ -6,7 +6,7 @@ class Review < ActiveRecord::Base
 	presence: true
 
 	validates :movie,
-	presence true
+	presence: true
 
 	validates :text,
 	presence: true
