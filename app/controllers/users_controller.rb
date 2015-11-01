@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   	if @user.save
   		session[:user_id] = @user.id # auto log in
+      UserMailer.welcome_email(@user).deliver
   		redirect_to movies_path, notice: "Welcome, #{@user.firstname}!"
   	else
   		render :new
@@ -18,7 +19,5 @@ class UsersController < ApplicationController
 
   def user_params
   	params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation)
-  end
-
-  
+  end 
 end

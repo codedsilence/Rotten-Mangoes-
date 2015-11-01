@@ -1,0 +1,13 @@
+<h1><%= @profile.full_name %>'s Profile</h1>
+<hr>
+
+<%if @profile.reviews.any? %>
+  <h3>Here are some movies <%= @profile.firstname %> has reviewed:</h3>
+  <ul>
+  <% @profile.reviews.each do |review| %>
+    <li> <%= link_to review.movie.title, movie_path(review.movie.id) %> </li>
+  <% end %>
+  </ul>
+<% else %>
+  <h3><%= @profile.firstname %> hasn't reviewed anything</h3>
+<% end %>

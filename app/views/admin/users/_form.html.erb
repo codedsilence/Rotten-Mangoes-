@@ -1,0 +1,23 @@
+<% if @user.errors.any? %>
+  <div>
+    <%= pluralize(@user.errors.count, "error") %> prevented the account from being created:
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<div>
+  <%= form.label :email %><br>
+  <%= form.text_field :email %>
+</div>
+<div>
+  <%= form.label :firstname, "First Name" %><br>
+  <%= form.text_field :firstname %>
+</div>
+<div>
+  <%= form.label :lastname, "Last Name" %><br>
+  <%= form.text_field :lastname %>
+</div>
+<br>

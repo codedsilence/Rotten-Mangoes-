@@ -1,4 +1,4 @@
-<h1>Rotten Mangoes</h1>
+<!-- <h1>Rotten Mangoes</h1>
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 <% @movies.each do |movie| %>
@@ -9,4 +9,14 @@
 	<p><%= movie.description %></p>
 	<h5><%= movie.review_average %>/10</h5>
 	<hr>
+<% end %>
+ -->
+
+<h1>Rotten Mangoes</h1>
+
+<%= render "search" %>
+<p> <%= link_to "Submit a movie!", new_movie_path %>  |  <%= link_to "User Profiles!", profiles_path %> </p>
+<hr>
+<% @movies.each do |movie| %>
+ <%= render "movie", movie: movie %>
 <% end %>

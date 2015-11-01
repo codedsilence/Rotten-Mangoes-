@@ -1,0 +1,9 @@
+<%= form_tag movies_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search_term, params[:search_term], placeholder: "search director or title" %>
+
+    <%= select_tag(:runtime, options_for_select([["", nil], ["Under 90 mins", "under90"],["Between 90 and 120 minutes","between90_120"],["Over 120 minutes", "over120"]])) %>
+    
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
